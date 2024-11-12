@@ -4,7 +4,7 @@ Contributors: themefuse<br>
 Requires at least: 4.5<br>
 Tested up to: 6.6.2<br>
 Requires PHP: 7.2.24<br>
-Stable tag: 2.510<br>
+Stable tag: 2.6.0<br>
 License: GPLv3<br>
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -136,7 +136,7 @@ $bodyHtml = apply_filters( 'brizy_content', $html->get_body(), Brizy_Editor_Proj
 
 ## Changelog
 
-### 2.510 - 2024-11-12
+### 2.6.0 - 2024-11-12
 * New: Added video "URL" option for the Playlist element 
 * New: Added "Blending Mode" styling option for the Image element 
 * New: Ability to add multi-line text in one Buttons 

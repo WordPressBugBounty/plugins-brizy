@@ -4,7 +4,7 @@ Tags: page builder, website builder, brizy, editor, visual editor, unyson, wysiw
 Requires at least: 4.5
 Tested up to: 6.6.2
 Requires PHP: 7.2.24
-Stable tag: 2.510
+Stable tag: 2.6.0
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -133,7 +133,7 @@ Don't worry if you make a mistake or delete something that you shouldn't have. W
 
 == Changelog ==
 
-= 2.510 - 2024-11-12 =
+= 2.6.0 - 2024-11-12 =
 * New: Added video "URL" option for the Playlist element 
 * New: Added "Blending Mode" styling option for the Image element 
 * New: Ability to add multi-line text in one Buttons 
