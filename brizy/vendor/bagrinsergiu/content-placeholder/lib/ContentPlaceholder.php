@@ -207,12 +207,12 @@ final class ContentPlaceholder
         return $placeholder;
     }
 
-    protected function buildAttributeString()
+    protected function buildAttributeString($quote = '"')
     {
         return implode(" ",
-            array_map(function ($key, $val) {
+            array_map(function ($key, $val)  use ($quote) {
                 $val = addslashes(urlencode($val));
-                return "{$key}=\"{$val}\"";
+                return "{$key}={$quote}{$val}{$quote}";
             },
                 array_keys($this->getAttributes()),
                 array_values($this->getAttributes())
