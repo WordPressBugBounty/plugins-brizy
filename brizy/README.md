@@ -4,7 +4,7 @@ Contributors: themefuse<br>
 Requires at least: 4.5<br>
 Tested up to: 6.7.1<br>
 Requires PHP: 7.2.24<br>
-Stable tag: 2.6.9<br>
+Stable tag: 2.6.10<br>
 License: GPLv3<br>
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -135,6 +135,11 @@ $bodyHtml = apply_filters( 'brizy_content', $html->get_body(), Brizy_Editor_Proj
 [Privacy policy](https://brizy.io/privacy/)
 
 ## Changelog
+
+### 2.6.10 - 2025-02-11
+* Fixed: SVG attachment creation
+* Fixed: added a security fix on API endpoint
+
 
 ### 2.6.9 - 2025-01-30
 * Fixed: Image upload 
