@@ -2,9 +2,9 @@
 Contributors: themefuse
 Tags: page builder, website builder, brizy, editor, visual editor, unyson, wysiwyg, landing page, drag-and-drop, design, landing page builder, front-end builder
 Requires at least: 4.5
-Tested up to: 6.7.1
+Tested up to: 6.7.2
 Requires PHP: 7.2.24
-Stable tag: 2.6.10
+Stable tag: 2.6.11
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -133,10 +133,12 @@ Don't worry if you make a mistake or delete something that you shouldn't have. W
 
 == Changelog ==
 
-= 2.6.10 - 2025-02-11 =
+= 2.6.11 - 2025-02-18 =
+* Fixed: Gallery with layout justify 
+
+= 2.6.10 - 2025-02-11
 * Fixed: SVG attachment creation
 * Fixed: added a security fix on API endpoint
-
 
 = 2.6.9 - 2025-01-30 =
 * Fixed: Image upload 
