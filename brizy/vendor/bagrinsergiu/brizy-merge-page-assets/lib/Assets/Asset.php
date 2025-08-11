@@ -72,6 +72,19 @@ class Asset
         );
     }
 
+    static function instanceFromData($data)
+    {
+        return new self(
+            $data['name'],
+            $data['score'],
+            isset($data['content']) ? $data['content'] : null,
+            isset($data['url']) ? $data['url'] : null,
+            isset($data['type']) ? $data['type'] : null,
+            isset($data['attrs']) ? $data['attrs'] : [],
+            $data['pro']
+        );
+    }
+
     /**
      * Asset constructor.
      *

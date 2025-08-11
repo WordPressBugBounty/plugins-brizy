@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'brizy/brizy',
-        'pretty_version' => 'dev-master',
-        'version' => 'dev-master',
-        'reference' => 'c8c9b0a1cd81756453fe5e3dec0f65aae1e1a264',
+        'pretty_version' => 'dev-develop',
+        'version' => 'dev-develop',
+        'reference' => 'cae6175244af1b3dee25800186596bde1494a760',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +13,7 @@
         'bagrinsergiu/brizy-merge-page-assets' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => '61eea2244cb34ff8666b802aafa74f74dec869da',
+            'reference' => '02950716142303539b3b50527aca3d90d5762f4c',
             'type' => 'library',
             'install_path' => __DIR__ . '/../bagrinsergiu/brizy-merge-page-assets',
             'aliases' => array(
@@ -33,16 +33,16 @@
         'bagrinsergiu/content-placeholder' => array(
             'pretty_version' => 'v3.x-dev',
             'version' => '3.9999999.9999999.9999999-dev',
-            'reference' => '6ff633bc24f32e1a1623782d95fca3348ce03995',
+            'reference' => 'ad9e738fae4fb84808ed2b29b500bed6b06cbd17',
             'type' => 'library',
             'install_path' => __DIR__ . '/../bagrinsergiu/content-placeholder',
             'aliases' => array(),
             'dev_requirement' => false,
         ),
         'brizy/brizy' => array(
-            'pretty_version' => 'dev-master',
-            'version' => 'dev-master',
-            'reference' => 'c8c9b0a1cd81756453fe5e3dec0f65aae1e1a264',
+            'pretty_version' => 'dev-develop',
+            'version' => 'dev-develop',
+            'reference' => 'cae6175244af1b3dee25800186596bde1494a760',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -69,7 +69,7 @@
         'nikic/php-parser' => array(
             'pretty_version' => '4.x-dev',
             'version' => '4.9999999.9999999.9999999-dev',
-            'reference' => '715f4d25e225bc47b293a8b997fe6ce99bf987d2',
+            'reference' => '86365c8e3f68698c52abe1a386fc751b4c5dd322',
             'type' => 'library',
             'install_path' => __DIR__ . '/../nikic/php-parser',
             'aliases' => array(),
@@ -205,6 +205,17 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../phplrt/visitor',
             'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'psr/log' => array(
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
+            'reference' => 'f16e1d5863e37f8d8c2a01719f5b34baa2b714d3',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../psr/log',
+            'aliases' => array(
+                0 => '3.x-dev',
+            ),
             'dev_requirement' => false,
         ),
         'select2/select2' => array(

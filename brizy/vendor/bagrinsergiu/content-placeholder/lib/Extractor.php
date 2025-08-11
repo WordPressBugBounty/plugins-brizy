@@ -5,6 +5,7 @@ namespace BrizyPlaceholders;
 use Phplrt\Lexer\Lexer;
 use Phplrt\Lexer\Token\Composite;
 use Phplrt\Lexer\Token\Token;
+use Psr\Log\LoggerInterface;
 
 /**
  * Class Extractor
@@ -18,6 +19,10 @@ final class Extractor implements ExtractorInterface
      * @var RegistryInterface
      */
     private $registry;
+    /**
+     * @var LoggerInterface|null
+     */
+    private $logger;
 
 
     /**
@@ -25,10 +30,11 @@ final class Extractor implements ExtractorInterface
      *
      * @param RegistryInterface $registry
      */
-    public function __construct($registry)
+    public function __construct($registry, LoggerInterface $logger=null)
     {
         @ini_set('pcre.backtrack_limit', 9000000);
         $this->registry = $registry;
+        $this->logger = $logger;
     }
 
     public function stripPlaceholders($content)

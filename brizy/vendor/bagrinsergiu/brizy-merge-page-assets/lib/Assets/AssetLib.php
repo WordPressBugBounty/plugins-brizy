@@ -38,6 +38,19 @@ class AssetLib extends Asset
             $data['selectors']);
     }
 
+    static function instanceFromData($data)
+    {
+        return new self(
+            $data['name'],
+            $data['score'],
+            isset($data['content'])?$data['content']:'',
+            isset($data['url'])?$data['url']:'',
+            isset($data['type'])?$data['type']:'',
+            isset($data['attrs'])?$data['attrs']:[],
+            $data['pro'],
+            $data['selectors']
+        );
+    }
     /**
      * AssetLib constructor.
      *

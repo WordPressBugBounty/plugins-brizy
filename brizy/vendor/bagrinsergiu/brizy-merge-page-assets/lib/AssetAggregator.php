@@ -63,8 +63,38 @@ class AssetAggregator
 
     private function getLibMaps($groups)
     {
-        $pro  = null;
+        $pro = null;
         $free = null;
+
+        // split the libs in free and pro
+        // sort the groups by version
+        // chose the fre max version and pro max version
+
+        $freeGroups = array_filter($groups, function ($g) {
+            if ($g->getMain() && !$g->getMain()->isPro()) {
+                return $g;
+            }
+        });
+        $proGroups = array_filter($groups, function ($g) {
+            if ($g->getMain() && $g->getMain()->isPro()) {
+                return $g;
+            }
+        });
+
+        usort($freeGroups, function ($a, $b) {
+            return version_compare($b->getVersion(), $a->getVersion());
+        });
+
+        usort($proGroups, function ($a, $b) {
+            return version_compare($b->getVersion(), $a->getVersion());
+        });
+
+        return [
+            isset($freeGroups[0])?$freeGroups[0]->getLibsMap():null,
+            isset($proGroups[0])?$proGroups[0]->getLibsMap():null,
+        ];
+
+
         foreach ($groups as $group) {
             /**
              * @var AssetGroup $group ;
@@ -85,7 +115,7 @@ class AssetAggregator
 
     private function getAggregatedAssets($groups)
     {
-        $assets    = [];
+        $assets = [];
         $mainAsset = null;
 
         foreach ($groups as $group) {
@@ -94,7 +124,7 @@ class AssetAggregator
              * @var AssetGroup $group ;
              */
             // set main asset and override if there are pro main assets
-            if ( ! $mainAsset || $group->getMain()->isPro()) {
+            if (!$mainAsset || $group->getMain()->isPro()) {
                 $mainAsset = $group->getMain();
             }
 
@@ -108,7 +138,7 @@ class AssetAggregator
                 $assets[] = $style;
             }
 
-            $selectors      = $group->getLibsSelectors();
+            $selectors = $group->getLibsSelectors();
             $selectorsCount = count($selectors);
 
             if ($selectorsCount != 0) {
@@ -120,8 +150,8 @@ class AssetAggregator
                         }
 
                         return count(
-                                   array_intersect($alib->getSelectors(), $selectors)
-                               ) == $selectorsCount ? $alib : null;
+                            array_intersect($alib->getSelectors(), $selectors)
+                        ) == $selectorsCount ? $alib : null;
                     }
                 );
 
@@ -133,7 +163,7 @@ class AssetAggregator
             $assets = array_filter(
                 $assets,
                 function ($a) {
-                    return ! is_null($a);
+                    return !is_null($a);
                 }
             );
         }
@@ -150,10 +180,10 @@ class AssetAggregator
     {
         // remove duplicates
         $duplicateKeys = [];
-        $tmp           = [];
+        $tmp = [];
 
         foreach ($assets as $key => $val) {
-            if ( ! in_array($val, $tmp)) {
+            if (!in_array($val, $tmp)) {
                 $tmp[] = $val;
             } else {
                 $duplicateKeys[] = $key;
@@ -165,19 +195,19 @@ class AssetAggregator
         }
 
         // find libs and check if cannot be replace with a bigger lib to save requests
-        $freeLibsFoundKeys      = [];
+        $freeLibsFoundKeys = [];
         $freeLibsSelectorsFound = [];
-        $proLibsFoundKeys       = [];
-        $proLibsSelectorsFound  = [];
+        $proLibsFoundKeys = [];
+        $proLibsSelectorsFound = [];
 
         foreach ($assets as $key => $lib) {
-            if ($lib instanceof AssetLib && ! $lib->isPro()) {
-                $freeLibsFoundKeys[]    = $key;
+            if ($lib instanceof AssetLib && !$lib->isPro()) {
+                $freeLibsFoundKeys[] = $key;
                 $freeLibsSelectorsFound = array_merge($freeLibsSelectorsFound, $lib->getSelectors());
             }
 
             if ($lib instanceof AssetLib && $lib->isPro()) {
-                $proLibsFoundKeys[]    = $key;
+                $proLibsFoundKeys[] = $key;
                 $proLibsSelectorsFound = array_merge($proLibsSelectorsFound, $lib->getSelectors());
             }
         }
@@ -195,7 +225,7 @@ class AssetAggregator
     {
         if (count($foundLibPositions) != 0) {
             // try to find a lib containing all found selectors
-            $libsSelectorsFound      = array_unique($selectorsFound);
+            $libsSelectorsFound = array_unique($selectorsFound);
             $libsSelectorsFoundCount = count($libsSelectorsFound);
 
             foreach ($libMap as $alib) {
@@ -220,7 +250,7 @@ class AssetAggregator
             $assets,
             self::FONT_TYPE_GOOGLE,
             "/\?family=(.*?)(&|\")/",
-            function ($value,$matchTermination) {
+            function ($value, $matchTermination) {
                 return "?family={$value}{$matchTermination}";
             }
         );
@@ -232,7 +262,7 @@ class AssetAggregator
             $assets,
             self::FONT_TYPE_UPLOADED,
             "/-font=(.*?)(&|\"|$)/",
-            function ($value,$matchTermination) {
+            function ($value, $matchTermination) {
                 return "-font={$value}{$matchTermination}";
             }
         );
@@ -241,7 +271,7 @@ class AssetAggregator
     private function groupFonts($assets, $fontType, $extractRegex, $replaceRegex)
     {
         // extract google fonts
-        $fonts      = [];
+        $fonts = [];
         $sampleFont = null;
         $matchTermination = "";
         foreach ($assets as $i => $asset) {
@@ -251,21 +281,21 @@ class AssetAggregator
             if ($asset instanceof AssetFont && $asset->getFontType() === $fontType) {
 
                 // obtain a font copy
-                if ( ! $sampleFont) {
+                if (!$sampleFont) {
                     $sampleFont = $asset;
                 }
                 $matches = [];
                 preg_match($extractRegex, $asset->getContentByType(), $matches);
 
-                if (isset($matches[1]) ) {
+                if (isset($matches[1])) {
                     $fontString = urldecode($matches[1]);
-                    $fontSets   = explode('|', $fontString);
+                    $fontSets = explode('|', $fontString);
 
                     foreach ($fontSets as $set) {
                         list($family, $weights) = explode(':', $set);
                         $weights = explode(',', $weights);
 
-                        if ( ! isset($fonts[$family])) {
+                        if (!isset($fonts[$family])) {
                             $fonts[$family] = [];
                         }
 
@@ -283,14 +313,14 @@ class AssetAggregator
         }
 
         // generate font query value
-        if ( ! $sampleFont) {
+        if (!$sampleFont) {
             return $assets;
         }
 
         $f = [];
         foreach ($fonts as $family => $weight) {
             $weight = array_unique($weight);
-            $f[] = $family.':'.implode(',', $weight);
+            $f[] = $family . ':' . implode(',', $weight);
         }
         $fontQueryValue = implode('|', $f);
 

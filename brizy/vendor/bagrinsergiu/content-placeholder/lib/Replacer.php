@@ -2,6 +2,8 @@
 
 namespace BrizyPlaceholders;
 
+use Psr\Log\LoggerInterface;
+
 /**
  * Class Replacer
  */
@@ -16,15 +18,20 @@ final class Replacer
      * @var RegistryInterface
      */
     private $registry;
+    /**
+     * @var LoggerInterface|null
+     */
+    private $logger;
 
     /**
      * Brizy_Content_PlaceholderReplacer constructor.
      *
      * @param $registry
      */
-    public function __construct($registry)
+    public function __construct($registry, LoggerInterface $logger = null)
     {
         $this->registry = $registry;
+        $this->logger = $logger;
     }
 
     /**
@@ -75,6 +82,9 @@ final class Replacer
                 }
 
             } catch (\Exception $e) {
+                if ($this->logger) {
+                    $this->logger->error($e->getMessage(),['placeholder' => $contentPlaceholder->getName(),'attributes' => $contentPlaceholder->getAttributes()]);
+                }
                 array_pop($toReplace);
                 continue;
             }

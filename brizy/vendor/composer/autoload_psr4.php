@@ -11,6 +11,7 @@ return array(
     'Zend\\Code\\' => array($vendorDir . '/zendframework/zend-code/src'),
     'Symfony\\Polyfill\\Php73\\' => array($vendorDir . '/symfony/polyfill-php73'),
     'Symfony\\Component\\Dotenv\\' => array($vendorDir . '/symfony/dotenv'),
+    'Psr\\Log\\' => array($vendorDir . '/psr/log/src'),
     'Phplrt\\Visitor\\' => array($vendorDir . '/phplrt/visitor/src'),
     'Phplrt\\Source\\' => array($vendorDir . '/phplrt/source/src'),
     'Phplrt\\Position\\' => array($vendorDir . '/phplrt/position/src'),

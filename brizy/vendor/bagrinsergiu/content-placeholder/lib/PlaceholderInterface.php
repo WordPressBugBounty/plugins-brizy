@@ -32,6 +32,11 @@ interface PlaceholderInterface
     public function getConfigStructure();
 
     /**
+     * @return PlaceholderDependency[]
+     */
+    public function getDependencies(): array;
+
+    /**
      * It should return a unique identifier of the placeholder
      *
      * @return mixed

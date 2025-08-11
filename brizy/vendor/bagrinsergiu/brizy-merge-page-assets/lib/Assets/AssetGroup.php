@@ -12,6 +12,11 @@ class AssetGroup
     private $main;
 
     /**
+     * @var int
+     */
+    private $version;
+
+    /**
      * @var Asset[]
      */
     private $generic;
@@ -43,7 +48,7 @@ class AssetGroup
     {
         $assetKeys = array_keys($data);
 
-        $allowedKeys = ['main', 'generic', 'libsMap', 'libsSelectors'];
+        $allowedKeys = ['main', 'generic', 'libsMap', 'libsSelectors','version'];
         if ($keyDiff = array_diff($assetKeys, $allowedKeys)) {
             if ($keyDiff2 = array_diff(['pageFonts', 'pageStyles'], $keyDiff)) {
                 if (count($keyDiff2) != 0) {
@@ -89,7 +94,60 @@ class AssetGroup
             }
         }
 
-        return new self($main, $generic, $libsMap, $libsSelectors, $pageFonts, $pageStyles);
+        return new self($main, $generic, $libsMap, $libsSelectors, $pageFonts, $pageStyles, isset($data['version']) ? $data['version'] : 0);
+    }
+
+    static function instanceFromData($data)
+    {
+        $assetKeys = array_keys($data);
+
+        $allowedKeys = ['main', 'generic', 'libsMap', 'libsSelectors'];
+        if ($keyDiff = array_diff($assetKeys, $allowedKeys)) {
+            if ($keyDiff2 = array_diff(['pageFonts', 'pageStyles'], $keyDiff)) {
+                if (count($keyDiff2) != 0) {
+                    throw new \Exception('Invalid AssetGroup fields provided: '.json_encode($keyDiff2));
+                }
+            }
+        }
+
+        // create main assets
+        $main = $data['main'];
+
+        // create generic assets
+        $generic = [];
+        foreach ($data['generic'] as $entry) {
+            $generic[] = $entry;
+        }
+
+        // create libsMap assets
+        $libsMap = [];
+        foreach ($data['libsMap'] as $entry) {
+            $libsMap[] =$entry;
+        }
+
+        // create libsSelectors assets
+        $libsSelectors = [];
+        foreach ($data['libsSelectors'] as $entry) {
+            $libsSelectors[] = $entry;
+        }
+
+        // create pageFonts assets
+        $pageFonts = [];
+        if (isset($data['pageFonts'])) {
+            foreach ($data['pageFonts'] as $entry) {
+                $pageFonts[] = $entry;
+            }
+        }
+
+        // create pageStyles assets
+        $pageStyles = [];
+        if (isset($data['pageStyles'])) {
+            foreach ($data['pageStyles'] as $entry) {
+                $pageStyles[] = $entry;
+            }
+        }
+
+        return new self($main, $generic, $libsMap, $libsSelectors, $pageFonts, $pageStyles, isset($data['version']) ? $data['version'] : 0);
     }
 
     /**
@@ -108,7 +166,8 @@ class AssetGroup
         $libsMap = [],
         $libsSelectors = [],
         $pageFonts = [],
-        $pageStyles = []
+        $pageStyles = [],
+        $version = 0
     ) {
         $this->main          = $main;
         $this->generic       = $generic;
@@ -116,6 +175,7 @@ class AssetGroup
         $this->libsSelectors = $libsSelectors;
         $this->pageFonts     = $pageFonts;
         $this->pageStyles    = $pageStyles;
+        $this->version    = $version;
     }
 
     /**
@@ -238,5 +298,19 @@ class AssetGroup
         return $this;
     }
 
+    /**
+     * @return int|mixed
+     */
+    public function getVersion()
+    {
+        return $this->version;
+    }
 
+    /**
+     * @param int|mixed $version
+     */
+    public function setVersion($version)
+    {
+        $this->version = $version;
+    }
 }

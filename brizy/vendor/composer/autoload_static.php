@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitcb0b555224ee1fe6024e6df332d49b92
+class ComposerStaticInit846af9544276d9b8212f7038c391bc02
 {
     public static $files = array (
         '0d59ee240a4cd96ddbb4ff164fccea4d' => __DIR__ . '/..' . '/symfony/polyfill-php73/bootstrap.php',
@@ -29,6 +29,7 @@ class ComposerStaticInitcb0b555224ee1fe6024e6df332d49b92
         ),
         'P' => 
         array (
+            'Psr\\Log\\' => 8,
             'Phplrt\\Visitor\\' => 15,
             'Phplrt\\Source\\' => 14,
             'Phplrt\\Position\\' => 16,
@@ -72,6 +73,10 @@ class ComposerStaticInitcb0b555224ee1fe6024e6df332d49b92
         'Symfony\\Component\\Dotenv\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/dotenv',
+        ),
+        'Psr\\Log\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/log/src',
         ),
         'Phplrt\\Visitor\\' => 
         array (
@@ -184,6 +189,7 @@ class ComposerStaticInitcb0b555224ee1fe6024e6df332d49b92
         'BrizyPlaceholders\\EmptyContext' => __DIR__ . '/..' . '/bagrinsergiu/content-placeholder/lib/EmptyContext.php',
         'BrizyPlaceholders\\Extractor' => __DIR__ . '/..' . '/bagrinsergiu/content-placeholder/lib/Extractor.php',
         'BrizyPlaceholders\\ExtractorInterface' => __DIR__ . '/..' . '/bagrinsergiu/content-placeholder/lib/ExtractorInterface.php',
+        'BrizyPlaceholders\\PlaceholderDependency' => __DIR__ . '/..' . '/bagrinsergiu/content-placeholder/lib/PlaceholderDependency.php',
         'BrizyPlaceholders\\PlaceholderInterface' => __DIR__ . '/..' . '/bagrinsergiu/content-placeholder/lib/PlaceholderInterface.php',
         'BrizyPlaceholders\\Registry' => __DIR__ . '/..' . '/bagrinsergiu/content-placeholder/lib/Registry.php',
         'BrizyPlaceholders\\RegistryInterface' => __DIR__ . '/..' . '/bagrinsergiu/content-placeholder/lib/RegistryInterface.php',
@@ -614,6 +620,14 @@ class ComposerStaticInitcb0b555224ee1fe6024e6df332d49b92
         'Phplrt\\Visitor\\TraverserInterface' => __DIR__ . '/..' . '/phplrt/visitor/src/TraverserInterface.php',
         'Phplrt\\Visitor\\Visitor' => __DIR__ . '/..' . '/phplrt/visitor/src/Visitor.php',
         'Phplrt\\Visitor\\VisitorInterface' => __DIR__ . '/..' . '/phplrt/visitor/src/VisitorInterface.php',
+        'Psr\\Log\\AbstractLogger' => __DIR__ . '/..' . '/psr/log/src/AbstractLogger.php',
+        'Psr\\Log\\InvalidArgumentException' => __DIR__ . '/..' . '/psr/log/src/InvalidArgumentException.php',
+        'Psr\\Log\\LogLevel' => __DIR__ . '/..' . '/psr/log/src/LogLevel.php',
+        'Psr\\Log\\LoggerAwareInterface' => __DIR__ . '/..' . '/psr/log/src/LoggerAwareInterface.php',
+        'Psr\\Log\\LoggerAwareTrait' => __DIR__ . '/..' . '/psr/log/src/LoggerAwareTrait.php',
+        'Psr\\Log\\LoggerInterface' => __DIR__ . '/..' . '/psr/log/src/LoggerInterface.php',
+        'Psr\\Log\\LoggerTrait' => __DIR__ . '/..' . '/psr/log/src/LoggerTrait.php',
+        'Psr\\Log\\NullLogger' => __DIR__ . '/..' . '/psr/log/src/NullLogger.php',
         'Symfony\\Component\\Dotenv\\Dotenv' => __DIR__ . '/..' . '/symfony/dotenv/Dotenv.php',
         'Symfony\\Component\\Dotenv\\Exception\\ExceptionInterface' => __DIR__ . '/..' . '/symfony/dotenv/Exception/ExceptionInterface.php',
         'Symfony\\Component\\Dotenv\\Exception\\FormatException' => __DIR__ . '/..' . '/symfony/dotenv/Exception/FormatException.php',
@@ -771,10 +785,10 @@ class ComposerStaticInitcb0b555224ee1fe6024e6df332d49b92
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitcb0b555224ee1fe6024e6df332d49b92::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitcb0b555224ee1fe6024e6df332d49b92::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInitcb0b555224ee1fe6024e6df332d49b92::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInitcb0b555224ee1fe6024e6df332d49b92::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit846af9544276d9b8212f7038c391bc02::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit846af9544276d9b8212f7038c391bc02::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit846af9544276d9b8212f7038c391bc02::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit846af9544276d9b8212f7038c391bc02::$classMap;
 
         }, null, ClassLoader::class);
     }
