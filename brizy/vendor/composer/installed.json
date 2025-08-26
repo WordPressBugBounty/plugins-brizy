@@ -590,7 +590,7 @@
                     "dev-master": "2.4.x-dev"
                 }
             },
-            "installation-source": "source",
+            "installation-source": "dist",
             "autoload": {
                 "psr-4": {
                     "Phplrt\\Lexer\\": "src"
@@ -1027,7 +1027,7 @@
                     "dev-master": "2.4.x-dev"
                 }
             },
-            "installation-source": "source",
+            "installation-source": "dist",
             "autoload": {
                 "psr-4": {
                     "Phplrt\\Visitor\\": "src"
@@ -1484,7 +1484,7 @@
                     "dev-develop": "3.3-dev"
                 }
             },
-            "installation-source": "source",
+            "installation-source": "dist",
             "autoload": {
                 "psr-4": {
                     "Zend\\EventManager\\": "src/"
