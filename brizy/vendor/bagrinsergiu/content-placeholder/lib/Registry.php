@@ -8,11 +8,11 @@ namespace BrizyPlaceholders;
  */
 class Registry implements RegistryInterface
 {
-
     /**
-     * @var PlaceholderInterface[]
+     * @var array <string, callable> List of placeholder class names and their factories
      */
-    public $placeholders = [];
+    private $placeholderCallbacks = [];
+    private $placeholderInstanceCache = [];
 
     /**
      * @param PlaceholderInterface $instance
@@ -21,29 +21,45 @@ class Registry implements RegistryInterface
      * @param string $groupName
      *
      * @return mixed|void
+     * @deprecated
      */
     public function registerPlaceholder(PlaceholderInterface $instance)
     {
-        $this->placeholders[] = $instance;
+        $this->registerPlaceholderName($instance->getPlaceholder(), function () use ($instance) {
+            return $instance;
+        });
+    }
+
+    public function registerPlaceholderName(string $placeholderName, callable $factory)
+    {
+        $this->placeholderCallbacks[$placeholderName] = $factory;
     }
 
     /**
+     * @return PlaceholderInterface|null
      * @inheritDoc
      */
+    public function getPlaceholderSupportingName($aname)
+    {
+        if (isset($this->placeholderInstanceCache[$aname])) {
+            return $this->placeholderInstanceCache[$aname];
+        }
+
+        if (isset($this->placeholderCallbacks[$aname])) {
+            $factory = $this->placeholderCallbacks[$aname];
+            return $this->placeholderInstanceCache[$aname] = $factory($aname);
+        }
+
+        return null;
+    }
+
     public function getPlaceholders()
     {
-        return $this->placeholders;
-    }
-
-    /**
-     * @inheritDoc
-     */
-    public function getPlaceholderSupportingName($name)
-    {
-        foreach ($this->placeholders as $aplaceholder) {
-            if ($aplaceholder->support($name)) {
-                return $aplaceholder;
-            }
+        $all = [];
+        foreach ($this->placeholderCallbacks as $placeholderName => $factory) {
+            $all[] = $this->getPlaceholderSupportingName($placeholderName);
         }
+
+        return $all;
     }
 }

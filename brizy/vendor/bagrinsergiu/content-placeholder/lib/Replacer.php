@@ -7,7 +7,7 @@ use Psr\Log\LoggerInterface;
 /**
  * Class Replacer
  */
-final class Replacer
+class Replacer
 {
     /**
      * @var ContextInterface

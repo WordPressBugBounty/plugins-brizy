@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit846af9544276d9b8212f7038c391bc02
+class ComposerStaticInitde71bb0b8fc86a024ca285f0d8f83aba
 {
     public static $files = array (
         '0d59ee240a4cd96ddbb4ff164fccea4d' => __DIR__ . '/..' . '/symfony/polyfill-php73/bootstrap.php',
@@ -13,21 +13,21 @@ class ComposerStaticInit846af9544276d9b8212f7038c391bc02
     );
 
     public static $prefixLengthsPsr4 = array (
-        'e' => 
+        'e' =>
         array (
             'enshrined\\svgSanitize\\' => 22,
         ),
-        'Z' => 
+        'Z' =>
         array (
             'Zend\\EventManager\\' => 18,
             'Zend\\Code\\' => 10,
         ),
-        'S' => 
+        'S' =>
         array (
             'Symfony\\Polyfill\\Php73\\' => 23,
             'Symfony\\Component\\Dotenv\\' => 25,
         ),
-        'P' => 
+        'P' =>
         array (
             'Psr\\Log\\' => 8,
             'Phplrt\\Visitor\\' => 15,
@@ -44,7 +44,7 @@ class ComposerStaticInit846af9544276d9b8212f7038c391bc02
             'Phplrt\\Compiler\\' => 16,
             'PhpParser\\' => 10,
         ),
-        'B' => 
+        'B' =>
         array (
             'BrizyPlaceholders\\' => 18,
             'BrizyPlaceholdersTests\\' => 23,
@@ -54,111 +54,111 @@ class ComposerStaticInit846af9544276d9b8212f7038c391bc02
     );
 
     public static $prefixDirsPsr4 = array (
-        'enshrined\\svgSanitize\\' => 
+        'enshrined\\svgSanitize\\' =>
         array (
             0 => __DIR__ . '/..' . '/enshrined/svg-sanitize/src',
         ),
-        'Zend\\EventManager\\' => 
+        'Zend\\EventManager\\' =>
         array (
             0 => __DIR__ . '/..' . '/zendframework/zend-eventmanager/src',
         ),
-        'Zend\\Code\\' => 
+        'Zend\\Code\\' =>
         array (
             0 => __DIR__ . '/..' . '/zendframework/zend-code/src',
         ),
-        'Symfony\\Polyfill\\Php73\\' => 
+        'Symfony\\Polyfill\\Php73\\' =>
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-php73',
         ),
-        'Symfony\\Component\\Dotenv\\' => 
+        'Symfony\\Component\\Dotenv\\' =>
         array (
             0 => __DIR__ . '/..' . '/symfony/dotenv',
         ),
-        'Psr\\Log\\' => 
+        'Psr\\Log\\' =>
         array (
             0 => __DIR__ . '/..' . '/psr/log/src',
         ),
-        'Phplrt\\Visitor\\' => 
+        'Phplrt\\Visitor\\' =>
         array (
             0 => __DIR__ . '/..' . '/phplrt/visitor/src',
         ),
-        'Phplrt\\Source\\' => 
+        'Phplrt\\Source\\' =>
         array (
             0 => __DIR__ . '/..' . '/phplrt/source/src',
         ),
-        'Phplrt\\Position\\' => 
+        'Phplrt\\Position\\' =>
         array (
             0 => __DIR__ . '/..' . '/phplrt/position/src',
         ),
-        'Phplrt\\Parser\\' => 
+        'Phplrt\\Parser\\' =>
         array (
             0 => __DIR__ . '/..' . '/phplrt/parser/src',
         ),
-        'Phplrt\\Lexer\\' => 
+        'Phplrt\\Lexer\\' =>
         array (
             0 => __DIR__ . '/..' . '/phplrt/lexer/src',
         ),
-        'Phplrt\\Grammar\\' => 
+        'Phplrt\\Grammar\\' =>
         array (
             0 => __DIR__ . '/..' . '/phplrt/grammar/src',
         ),
-        'Phplrt\\Contracts\\Source\\' => 
+        'Phplrt\\Contracts\\Source\\' =>
         array (
             0 => __DIR__ . '/..' . '/phplrt/source-contracts/src',
         ),
-        'Phplrt\\Contracts\\Parser\\' => 
+        'Phplrt\\Contracts\\Parser\\' =>
         array (
             0 => __DIR__ . '/..' . '/phplrt/parser-contracts/src',
         ),
-        'Phplrt\\Contracts\\Lexer\\' => 
+        'Phplrt\\Contracts\\Lexer\\' =>
         array (
             0 => __DIR__ . '/..' . '/phplrt/lexer-contracts/src',
         ),
-        'Phplrt\\Contracts\\Grammar\\' => 
+        'Phplrt\\Contracts\\Grammar\\' =>
         array (
             0 => __DIR__ . '/..' . '/phplrt/grammar-contracts/src',
         ),
-        'Phplrt\\Contracts\\Ast\\' => 
+        'Phplrt\\Contracts\\Ast\\' =>
         array (
             0 => __DIR__ . '/..' . '/phplrt/ast-contracts/src',
         ),
-        'Phplrt\\Compiler\\' => 
+        'Phplrt\\Compiler\\' =>
         array (
             0 => __DIR__ . '/..' . '/phplrt/compiler/src',
         ),
-        'PhpParser\\' => 
+        'PhpParser\\' =>
         array (
             0 => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser',
         ),
-        'BrizyPlaceholders\\' => 
+        'BrizyPlaceholders\\' =>
         array (
             0 => __DIR__ . '/..' . '/bagrinsergiu/content-placeholder/lib',
         ),
-        'BrizyPlaceholdersTests\\' => 
+        'BrizyPlaceholdersTests\\' =>
         array (
             0 => __DIR__ . '/..' . '/bagrinsergiu/content-placeholder/tests',
         ),
-        'BrizyMerge\\' => 
+        'BrizyMerge\\' =>
         array (
             0 => __DIR__ . '/..' . '/bagrinsergiu/brizy-merge-page-assets/lib',
         ),
-        'BrizyMergeTests\\' => 
+        'BrizyMergeTests\\' =>
         array (
             0 => __DIR__ . '/..' . '/bagrinsergiu/brizy-merge-page-assets/tests',
         ),
     );
 
     public static $prefixesPsr0 = array (
-        'G' => 
+        'G' =>
         array (
-            'Gaufrette' => 
+            'Gaufrette' =>
             array (
                 0 => __DIR__ . '/..' . '/knplabs/gaufrette/src',
             ),
         ),
-        'B' => 
+        'B' =>
         array (
-            'Brizy' => 
+            'Brizy' =>
             array (
                 0 => __DIR__ . '/..' . '/bagrinsergiu/brizy-migration-utils/src',
             ),
@@ -785,10 +785,10 @@ class ComposerStaticInit846af9544276d9b8212f7038c391bc02
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit846af9544276d9b8212f7038c391bc02::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit846af9544276d9b8212f7038c391bc02::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit846af9544276d9b8212f7038c391bc02::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit846af9544276d9b8212f7038c391bc02::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitde71bb0b8fc86a024ca285f0d8f83aba::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitde71bb0b8fc86a024ca285f0d8f83aba::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInitde71bb0b8fc86a024ca285f0d8f83aba::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInitde71bb0b8fc86a024ca285f0d8f83aba::$classMap;
 
         }, null, ClassLoader::class);
     }

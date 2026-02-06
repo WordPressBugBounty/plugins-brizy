@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'brizy/brizy',
-        'pretty_version' => 'dev-develop',
-        'version' => 'dev-develop',
-        'reference' => 'd3a29130dcb5ff50cabb540ef4eb10e4550b78e7',
+        'pretty_version' => 'dev-master',
+        'version' => 'dev-master',
+        'reference' => 'c02a88491e61781625b67110f0b3e60dc539cc99',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +13,7 @@
         'bagrinsergiu/brizy-merge-page-assets' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => '02950716142303539b3b50527aca3d90d5762f4c',
+            'reference' => 'd95ec788b720aa1ad886a4bcb6e0803648340f93',
             'type' => 'library',
             'install_path' => __DIR__ . '/../bagrinsergiu/brizy-merge-page-assets',
             'aliases' => array(
@@ -31,18 +31,18 @@
             'dev_requirement' => false,
         ),
         'bagrinsergiu/content-placeholder' => array(
-            'pretty_version' => 'v3.x-dev',
-            'version' => '3.9999999.9999999.9999999-dev',
-            'reference' => 'ad9e738fae4fb84808ed2b29b500bed6b06cbd17',
+            'pretty_version' => 'dev-lazy-register',
+            'version' => 'dev-lazy-register',
+            'reference' => '36732b34d07d56172ff7edd24c30abe6df858ca6',
             'type' => 'library',
             'install_path' => __DIR__ . '/../bagrinsergiu/content-placeholder',
             'aliases' => array(),
             'dev_requirement' => false,
         ),
         'brizy/brizy' => array(
-            'pretty_version' => 'dev-develop',
-            'version' => 'dev-develop',
-            'reference' => 'd3a29130dcb5ff50cabb540ef4eb10e4550b78e7',
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
+            'reference' => 'c02a88491e61781625b67110f0b3e60dc539cc99',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -69,7 +69,7 @@
         'nikic/php-parser' => array(
             'pretty_version' => '4.x-dev',
             'version' => '4.9999999.9999999.9999999-dev',
-            'reference' => '86365c8e3f68698c52abe1a386fc751b4c5dd322',
+            'reference' => 'c95b500f87e5fa2e598228e958667136125e0f5f',
             'type' => 'library',
             'install_path' => __DIR__ . '/../nikic/php-parser',
             'aliases' => array(),

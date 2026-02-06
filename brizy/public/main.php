@@ -273,10 +273,11 @@ class Brizy_Public_Main
         return $classes;
     }
 
-    /**
-     * @return bool
-     */
-    public static function is_editing_page_with_editor(Brizy_Editor_Post $post = null)
+	/**
+	 * @param Brizy_Editor_Post $post
+	 * @return bool
+	 */
+    public static function is_editing_page_with_editor($post = null)
     {
 
         return is_admin() &&
@@ -284,23 +285,30 @@ class Brizy_Public_Main
             ($post ? $post->uses_editor() : true);
     }
 
-    /**
-     * @return bool
-     */
-    public static function is_editing_page_with_editor_on_iframe(Brizy_Editor_Post $post = null)
+	/**
+	 * @param Brizy_Editor_Post $post
+	 * @return bool
+	 */
+    public static function is_editing_page_with_editor_on_iframe($post = null)
     {
         return !is_admin() && !empty($_REQUEST['is-editor-iframe']) && ($post ? $post->uses_editor() : true);
     }
 
-    public static function is_editing(Brizy_Editor_Post $post = null)
+	/**
+	 * @param Brizy_Editor_Post $post
+	 * @return bool
+	 */
+    public static function is_editing($post = null)
     {
         return self::is_editing_page_with_editor($post) || self::is_editing_page_with_editor_on_iframe($post);
     }
 
     /**
      * @return bool
+     * @var Brizy_Editor_Post|null $post
+     *
      */
-    public static function is_view_page(Brizy_Editor_Post $post = null)
+    public static function is_view_page($post = null)
     {
         $isView = false;
 
@@ -341,7 +349,6 @@ class Brizy_Public_Main
     }
 
 
-
     public function brizy_post_excerpt($content, $post = null)
     {
 
@@ -377,12 +384,12 @@ class Brizy_Public_Main
             return $content;
         }
 
-		$project = Brizy_Editor_Project::get();
-		$content = $this->post->getCompiledHtml();
+        $project = Brizy_Editor_Project::get();
+        $content = $this->post->getCompiledHtml();
 
-		if ( empty( $content ) ) {
-			return '';
-		}
+        if (empty($content)) {
+            return '';
+        }
 
         return apply_filters(
             'brizy_content',

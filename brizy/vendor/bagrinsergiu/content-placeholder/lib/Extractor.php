@@ -29,8 +29,9 @@ final class Extractor implements ExtractorInterface
      * Extractor constructor.
      *
      * @param RegistryInterface $registry
+     * @param null $logger
      */
-    public function __construct($registry, LoggerInterface $logger=null)
+    public function __construct($registry, $logger=null)
     {
         @ini_set('pcre.backtrack_limit', 9000000);
         $this->registry = $registry;
