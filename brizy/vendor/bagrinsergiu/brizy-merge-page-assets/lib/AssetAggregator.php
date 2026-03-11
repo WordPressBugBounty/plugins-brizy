@@ -90,27 +90,9 @@ class AssetAggregator
         });
 
         return [
-            isset($freeGroups[0])?$freeGroups[0]->getLibsMap():null,
-            isset($proGroups[0])?$proGroups[0]->getLibsMap():null,
+            isset($freeGroups[0]) ? $freeGroups[0]->getLibsMap() : null,
+            isset($proGroups[0]) ? $proGroups[0]->getLibsMap() : null,
         ];
-
-
-        foreach ($groups as $group) {
-            /**
-             * @var AssetGroup $group ;
-             */
-            if ($group->getMain() && $group->getMain()->isPro()) {
-                $pro = $group->getLibsMap();
-            } else {
-                $free = $group->getLibsMap();
-            }
-
-            if ($pro && $free) {
-                return [$free, $pro];
-            }
-        }
-
-        return [$free, $pro];
     }
 
     private function getAggregatedAssets($groups)
@@ -120,13 +102,7 @@ class AssetAggregator
 
         foreach ($groups as $group) {
 
-            /**
-             * @var AssetGroup $group ;
-             */
-            // set main asset and override if there are pro main assets
-            if (!$mainAsset || $group->getMain()->isPro()) {
-                $mainAsset = $group->getMain();
-            }
+            $assets[] = $group->getMain();
 
             foreach ($group->getGeneric() as $asset) {
                 $assets[] = $asset;
@@ -166,11 +142,6 @@ class AssetAggregator
                     return !is_null($a);
                 }
             );
-        }
-
-        // include main asset
-        if ($mainAsset) {
-            $assets[] = $mainAsset;
         }
 
         return $assets;
@@ -305,8 +276,7 @@ class AssetAggregator
 
                 unset($assets[$i]);
 
-                if(isset($matches[2]))
-                {
+                if (isset($matches[2])) {
                     $matchTermination = $matches[2];
                 }
             }

@@ -7,7 +7,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/bagrinsergiu/brizy-merge-page-assets.git",
-                "reference": "d95ec788b720aa1ad886a4bcb6e0803648340f93"
+                "reference": "65470f7b4111e9deb84047617d9915606139821c"
             },
             "require": {
                 "ext-json": "*",
@@ -16,7 +16,7 @@
             "require-dev": {
                 "phpunit/phpunit": "^9.4"
             },
-            "time": "2025-09-16T13:21:28+00:00",
+            "time": "2025-12-23T13:17:39+00:00",
             "default-branch": true,
             "type": "library",
             "installation-source": "source",
@@ -69,12 +69,12 @@
         },
         {
             "name": "bagrinsergiu/content-placeholder",
-            "version": "dev-lazy-register",
-            "version_normalized": "dev-lazy-register",
+            "version": "v3.0.8",
+            "version_normalized": "3.0.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bagrinsergiu/brizy-content-placeholder.git",
-                "reference": "36732b34d07d56172ff7edd24c30abe6df858ca6"
+                "reference": "2061f9fa2f2289ee7b65946bc4243be57c773e31"
             },
             "require": {
                 "php": ">=7.1.0",
@@ -87,7 +87,7 @@
                 "phpspec/prophecy-phpunit": "^2",
                 "phpunit/phpunit": "^9"
             },
-            "time": "2025-09-26T09:57:37+00:00",
+            "time": "2025-11-13T13:37:03+00:00",
             "type": "library",
             "installation-source": "source",
             "autoload": {
@@ -255,12 +255,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "c95b500f87e5fa2e598228e958667136125e0f5f"
+                "reference": "2707021f7aecb6f51281904fbda4c4acb9117a30"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/c95b500f87e5fa2e598228e958667136125e0f5f",
-                "reference": "c95b500f87e5fa2e598228e958667136125e0f5f",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/2707021f7aecb6f51281904fbda4c4acb9117a30",
+                "reference": "2707021f7aecb6f51281904fbda4c4acb9117a30",
                 "shasum": ""
             },
             "require": {
@@ -271,7 +271,7 @@
                 "ircmaxell/php-yacc": "^0.0.7",
                 "phpunit/phpunit": "^7.0 || ^8.0 || ^9.0"
             },
-            "time": "2025-08-13T12:16:18+00:00",
+            "time": "2025-12-01T11:20:26+00:00",
             "bin": [
                 "bin/php-parse"
             ],
