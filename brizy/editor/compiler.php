@@ -77,7 +77,12 @@ class Brizy_Editor_Compiler {
 			$blockManager = new Brizy_Admin_Blocks_Manager(Brizy_Admin_Blocks_Main::CP_GLOBAL);
 			foreach ( $editorConfig['globalBlocks'] as $block ) {
 				$block = $blockManager->getEntity( $block['uid'] );
-				if ( version_compare( $block->get_compiler_version(), $v2, "<" ) ) {
+
+				if(!$block) continue;
+
+				$blockVersion = preg_replace( "/((-beta\d+?)?-wp)$/", "", $block->get_compiler_version() );
+
+				if ( version_compare( $blockVersion, $v2, "<" ) ) {
 					return true;
 				}
 			}
