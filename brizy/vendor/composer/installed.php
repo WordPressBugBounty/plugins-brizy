@@ -3,7 +3,7 @@
         'name' => 'brizy/brizy',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
-        'reference' => '9cfa05926ad5f417194668aa72658a9f3a72a043',
+        'reference' => '7fc1f1f2976b920f9d090409c41abdbaf592252b',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -42,7 +42,7 @@
         'brizy/brizy' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => '9cfa05926ad5f417194668aa72658a9f3a72a043',
+            'reference' => '7fc1f1f2976b920f9d090409c41abdbaf592252b',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
