@@ -516,7 +516,7 @@
                     "dev-master": "2.4.x-dev"
                 }
             },
-            "installation-source": "dist",
+            "installation-source": "source",
             "autoload": {
                 "psr-4": {
                     "Phplrt\\Contracts\\Grammar\\": "src/"
