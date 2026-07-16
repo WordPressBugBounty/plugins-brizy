@@ -431,7 +431,7 @@ class Brizy_Editor_UrlBuilder {
 			$portPart=":".$urlInfo['port'];
 		}
 
-		return "{$urlInfo['scheme']}://{$urlInfo['host']}{$portPart}{$path}";
+		return "{$urlInfo['scheme']}://{$urlInfo['host']}{$portPart}{$urlInfo['path']}";
 	}
 
 	public function homeUrl( $path = '' ) {
