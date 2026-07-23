@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'brizy/brizy',
-        'pretty_version' => 'dev-develop',
-        'version' => 'dev-develop',
-        'reference' => '60916a8a50005d427ac261f0667ec9631480d23f',
+        'pretty_version' => 'dev-master',
+        'version' => 'dev-master',
+        'reference' => 'b193035048ccc851affc24f3444c4174727871c0',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -40,9 +40,9 @@
             'dev_requirement' => false,
         ),
         'brizy/brizy' => array(
-            'pretty_version' => 'dev-develop',
-            'version' => 'dev-develop',
-            'reference' => '60916a8a50005d427ac261f0667ec9631480d23f',
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
+            'reference' => 'b193035048ccc851affc24f3444c4174727871c0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
