@@ -4,7 +4,7 @@ Tags: page builder, website builder, brizy, editor, visual editor, unyson, wysiw
 Requires at least: 4.5
 Tested up to: 7.1.4
 Requires PHP: 7.4
-Stable tag: 2.8.25
+Stable tag: 2.8.26
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -136,6 +136,9 @@ You can report security bugs through the Patchstack Vulnerability Disclosure Pro
 
 == Changelog ==
 
+= 2.8.26 - 2026-11-11 =
+* Improved: resolution and ensure content filter targets correct post
+
 = 2.8.25 - 2026-11-02 =
 * New: Transform options for Row and Column elements
 * New: Default item options for groups and repeatable elements
@@ -174,6 +177,9 @@ You can report security bugs through the Patchstack Vulnerability Disclosure Pro
 * Fixed: Editor – resolved issues with delayed updates and cleanup when elements are removed
 * Fixed: Cloud sync now runs in the background even when no one is logged in
 * Fixed: Brizy now requires PHP 7.4 or newer, plus better translation support
+
+= 2.8.24 - 2026-10-19 =
+* Fixed: Vulnerability fixes
 
 = 2.8.23 - 2026-09-09 =
 * Fixed: Wordpress 7.1 compatibility fixes
